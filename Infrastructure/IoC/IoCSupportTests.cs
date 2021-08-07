@@ -1,7 +1,7 @@
 ﻿using Autofac;
 using Autofac.Core;
 
-namespace ProductsCatalog.IoC
+namespace Infrastructure.IoC
 {
     public class IoCSupportedTest<TModule> where TModule : IModule, new()
     {

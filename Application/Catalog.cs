@@ -1,12 +1,13 @@
-﻿using ProductCatalog.Application.Interfaces;
-using ProductsCatalog.Application.Interfaces;
+﻿using ProductsCatalog.Application.Interfaces;
 using ProductsCatalog.Domain.Interfaces;
+using System;
 using System.Collections.Generic;
 
 namespace ProductsCatalog.Application
 {
     public class Catalog : ICatalog
     {
+        public Catalog() {}
         IProductRepository _productRepository;
         ICategoryRepository _categoryRepository;
         public Catalog(
@@ -24,6 +25,11 @@ namespace ProductsCatalog.Application
         public IList<IProduct> GetAllProducts()
         {
             return _productRepository.GetAllProducts();
+        }
+
+        public ICategory GetCategoryById(Guid categoryId)
+        {
+            return _categoryRepository.GetCategoryById(categoryId);
         }
     }
 }

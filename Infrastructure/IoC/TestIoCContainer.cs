@@ -1,10 +1,10 @@
 ﻿using Autofac;
-using ProductCatalog.Application.Interfaces;
+using ProductsCatalog.Application.Interfaces;
 using ProductsCatalog.Application;
 using ProductsCatalog.Application.Interfaces;
 using ProductsCatalog.Infrastructure;
 
-namespace ProductCatalog.IoC
+namespace Infrastructure.IoC
 {
     public class TestIoCContainer : Module
     {

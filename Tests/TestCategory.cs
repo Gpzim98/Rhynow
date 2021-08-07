@@ -1,4 +1,5 @@
-﻿using ProductCatalog.Application.Interfaces;
+﻿using ProductsCatalog.Application.Interfaces;
+using System;
 using Xunit;
 
 namespace ProductsCatalog.Tests
@@ -15,6 +16,14 @@ namespace ProductsCatalog.Tests
         {
             var listOfProducts = productsCatalog.GetAllCategories();
             Assert.True(listOfProducts.Count > 0);
+        }
+
+        [Fact]
+        public void ShouldReturnCategoryById()
+        {
+            Guid categoryId = Guid.NewGuid();
+            var category = productsCatalog.GetCategoryById(categoryId);
+            Assert.NotNull(category);
         }
     }
 }

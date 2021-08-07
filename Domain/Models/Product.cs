@@ -1,6 +1,6 @@
 ﻿using ProductsCatalog.Domain.Interfaces;
 
-namespace ProductCatalog.Domain.Models
+namespace ProductsCatalog.Domain.Models
 {
     public class Product : IProduct
     {

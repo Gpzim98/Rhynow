@@ -2,6 +2,7 @@
 using ProductsCatalog.Domain.Interfaces;
 using System.Collections.Generic;
 using ProductsCatalog.Domain.Models;
+using System;
 
 namespace ProductsCatalog.Infrastructure
 {
@@ -29,6 +30,11 @@ namespace ProductsCatalog.Infrastructure
             categories.Add(category1);
 
             return categories;
+        }
+
+        public ICategory GetCategoryById(Guid categoryId)
+        {
+            return new Category();
         }
     }
 }

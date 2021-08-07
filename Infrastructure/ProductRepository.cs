@@ -1,4 +1,4 @@
-﻿using ProductCatalog.Domain.Models;
+﻿using ProductsCatalog.Domain.Models;
 using ProductsCatalog.Application.Interfaces;
 using ProductsCatalog.Domain.Interfaces;
 using System.Collections.Generic;

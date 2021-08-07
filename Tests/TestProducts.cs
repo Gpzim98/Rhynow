@@ -1,4 +1,4 @@
-using ProductCatalog.Application.Interfaces;
+using ProductsCatalog.Application.Interfaces;
 using System.Collections.Generic;
 using Xunit;
 using ProductsCatalog.Domain.Interfaces;

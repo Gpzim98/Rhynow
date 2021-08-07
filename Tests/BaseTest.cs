@@ -1,5 +1,4 @@
-﻿using ProductsCatalog.IoC;
-using ProductCatalog.IoC;
+﻿using Infrastructure.IoC;
 
 namespace ProductsCatalog.Tests
 {
