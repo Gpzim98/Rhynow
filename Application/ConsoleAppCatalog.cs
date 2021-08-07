@@ -5,12 +5,12 @@ using System.Collections.Generic;
 
 namespace ProductsCatalog.Application
 {
-    public class Catalog : ICatalog
+    public class ConsoleAppCatalog : ICatalog
     {
-        public Catalog() { }
+        public ConsoleAppCatalog() { }
         IProductRepository _productRepository;
         ICategoryRepository _categoryRepository;
-        public Catalog(
+        public ConsoleAppCatalog(
             IProductRepository productRepository,
             ICategoryRepository categoryRepository)
         {
@@ -29,8 +29,8 @@ namespace ProductsCatalog.Application
 
         public ICategory GetCategoryById(Guid categoryId)
         {
-            ICategory category = _categoryRepository.GetCategoryById(categoryId);
-            category.Name = "Category from Oficial Catalog Implementation";
+            var category = _categoryRepository.GetCategoryById(categoryId);
+            category.Name = "Category from ConsoleAppCatalog";
             return category;
         }
     }

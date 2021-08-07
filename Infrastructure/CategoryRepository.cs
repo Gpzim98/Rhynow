@@ -34,7 +34,7 @@ namespace ProductsCatalog.Infrastructure
 
         public ICategory GetCategoryById(Guid categoryId)
         {
-            return new Category();
+            return new Category(categoryId);
         }
     }
 }

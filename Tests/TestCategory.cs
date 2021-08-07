@@ -25,5 +25,13 @@ namespace ProductsCatalog.Tests
             var category = productsCatalog.GetCategoryById(categoryId);
             Assert.NotNull(category);
         }
+
+        [Fact]
+        public void ShouldReturnCategoryWithCorrectIdWhenCallingGetCategoryById()
+        {
+            Guid categoryId = Guid.NewGuid();
+            var category = productsCatalog.GetCategoryById(categoryId);
+            Assert.Equal(categoryId, category.Id);
+        }
     }
 }

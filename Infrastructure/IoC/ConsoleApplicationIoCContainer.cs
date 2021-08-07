@@ -5,11 +5,11 @@ using ProductsCatalog.Infrastructure;
 
 namespace Infrastructure.IoC
 {
-    public class TestIoCContainer : Module
+    public class ConsoleApplicationIoCContainer : Module
     {
         protected override void Load(ContainerBuilder builder)
         {
-            builder.RegisterType<Catalog>().As<ICatalog>().InstancePerLifetimeScope();
+            builder.RegisterType<ConsoleAppCatalog>().As<ICatalog>().InstancePerLifetimeScope();
             builder.RegisterType<ProductRepository>().As<IProductRepository>().InstancePerLifetimeScope();
             builder.RegisterType<CategoryRepository>().As<ICategoryRepository>().InstancePerLifetimeScope();
         }
