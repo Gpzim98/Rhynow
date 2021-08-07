@@ -12,7 +12,8 @@ namespace ProductsCatalog.Infrastructure
         {
             // TODO: Implement factory to avoid new-ing up Product
             IList<IProduct> productsList = new List<IProduct>();
-            IProduct product1 = new Product() {  
+            IProduct product1 = new Product()
+            {
                 Name = "Produto1",
                 Description = "Description product 1",
                 IsActive = true
