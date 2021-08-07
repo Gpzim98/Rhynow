@@ -27,7 +27,17 @@ jobs:
       run: dotnet restore Tests/Tests.csproj
     - name: Restoring dependencies Console project  
       run: dotnet restore ConsoleApplication/ConsoleApplication.csproj
-    - name: Build
+    
+    - name: Building Application layer
       run: dotnet build Application/Application.csproj --no-restore
+    - name: Building Domain layer
+      run: dotnet build Domain/Domain.csproj --no-restore
+    - name: Building Infrastructure layer
+      run: dotnet build Infrastructure/Infrastructure.csproj --no-restore
+    - name: Building Tests project
+      run: dotnet build Tests/Tests.csproj --no-restore
+    - name: Building Console project
+      run: dotnet build ConsoleApplication/ConsoleApplication.csproj --no-restore
+    
     - name: Test
       run: dotnet test Tests/Tests.csproj --no-build --verbosity normal
