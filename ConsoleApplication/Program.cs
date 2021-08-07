@@ -5,11 +5,11 @@ using Infrastructure.IoC;
 
 namespace ConsoleApplication
 {
-    class IoCContainer : IoCSupportedTest<ConsoleApplicationIoCContainer> 
+    class IoCContainer : IoCSupportedTest<ConsoleApplicationIoCContainer>
     {
         public ICatalog productsCatalog;
         public IoCContainer()
-        { 
+        {
             productsCatalog = Resolve<ICatalog>();
         }
     }
