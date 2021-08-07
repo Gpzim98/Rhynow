@@ -16,7 +16,7 @@ namespace ProductsCatalog.Tests
         public void ShouldReturnListOfProducts()
         {
             IList<IProduct> listOfProducts = productsCatalog.GetAllProducts();
-            Assert.True(listOfProducts.Count > 0);
+            Assert.True(listOfProducts.Count > 10);
         }
     }
 }
