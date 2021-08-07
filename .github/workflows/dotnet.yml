@@ -19,13 +19,6 @@ jobs:
         dotnet-version: 5.0.x
     - name: Restoring dependencies Application layer
       run: dotnet restore Application\Application.csproj
-    - name: Restoring dependencies Domain Layer
-      run: dotnet restore Domain\Domain.csproj
-    - name: Restoring dependencies Infrastructure Layer  
-      run: dotnet restore Infrastructure\Infrastructure.csproj
-    - name: Restoring dependencies Tests project  
-      run: dotnet restore Tests\Tests.csproj
-      run: dotnet restore ConsoleApplication\ConsoleApplication.csproj
     - name: Build
       run: dotnet build Application\Application.csproj --no-restore
     - name: Test
