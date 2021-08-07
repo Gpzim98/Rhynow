@@ -7,7 +7,7 @@ namespace ProductsCatalog.Application
 {
     public class Catalog : ICatalog
     {
-        public Catalog() {}
+        public Catalog() { }
         IProductRepository _productRepository;
         ICategoryRepository _categoryRepository;
         public Catalog(

@@ -7,7 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  Build:
 
     runs-on: ubuntu-latest
 
@@ -39,5 +39,19 @@ jobs:
     - name: Building Console project
       run: dotnet build ConsoleApplication/ConsoleApplication.csproj --no-restore
     
-    - name: Test
+    - name: Run Unit Tests
       run: dotnet test Tests/Tests.csproj --no-build --verbosity normal
+    
+    - name: Install dotnet format
+      run: dotnet tool update --global dotnet-format
+
+    - name: Run dotnet format Application Layer
+      run: dotnet format --check --verbosity diagnostic Application/Application.csproj
+    - name: Run dotnet format Domain Layer
+      run: dotnet format --check --verbosity diagnostic Domain/Domain.csproj
+    - name: Run dotnet format Infrastructure Layer
+      run: dotnet format --check --verbosity diagnostic Infrastructure/Infrastructure.csproj
+    - name: Run dotnet format Tests project
+      run: dotnet format --check --verbosity diagnostic Tests/Tests.csproj
+    - name: Run dotnet format ConsoleApplication application
+      run: dotnet format --check --verbosity diagnostic ConsoleApplication/ConsoleApplication.csproj    
