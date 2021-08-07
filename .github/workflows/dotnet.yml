@@ -18,8 +18,8 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restoring dependencies Application layer
-      run: dotnet restore Application\Application.csproj
+      run: dotnet restore Application/Application.csproj
     - name: Build
-      run: dotnet build Application\Application.csproj --no-restore
+      run: dotnet build Application/Application.csproj --no-restore
     - name: Test
-      run: dotnet test Tests\Tests.csproj --no-build --verbosity normal
+      run: dotnet test Tests/Tests.csproj --no-build --verbosity normal
