@@ -18,8 +18,16 @@ jobs:
       with:
         dotnet-version: 5.0.x
     - name: Restore dependencies
-      run: dotnet restore
+      run: dotnet restore Application\Application.csproj
+      run: dotnet restore Domain\Domain.csproj
+      run: dotnet restore Infrastructure\Infrastructure.csproj
+      run: dotnet restore Tests\Tests.csproj
+      run: dotnet restore ConsoleApplication\ConsoleApplication.csproj
     - name: Build
-      run: dotnet build --no-restore
+      run: dotnet build Application\Application.csproj --no-restore
+      run: dotnet build Domain\Domain.csproj --no-restore
+      run: dotnet build Infrastructure\Infrastructure.csproj --no-restore
+      run: dotnet build Tests\Tests.csproj --no-restore
+      run: dotnet build ConsoleApplication\ConsoleApplication.csproj --no-restore
     - name: Test
-      run: dotnet test --no-build --verbosity normal
+      run: dotnet test Tests\Tests.csproj --no-build --verbosity normal
