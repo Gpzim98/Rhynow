@@ -6,7 +6,7 @@ namespace ProductsCatalog.Application.Interfaces
 {
     public interface ICatalog
     {
-        IList<IProduct> GetAllProducts();
+        IList<IProduct> GetAllProductsAsync();
         IList<ICategory> GetAllCategories();
         ICategory GetCategoryById(Guid categoryId);
     }

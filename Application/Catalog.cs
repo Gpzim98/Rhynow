@@ -2,34 +2,35 @@
 using ProductsCatalog.Domain.Interfaces;
 using System;
 using System.Collections.Generic;
+using ProductsCatalog.Application.Interfaces.Repositories;
 
 namespace ProductsCatalog.Application
 {
     public class Catalog : ICatalog
     {
         public Catalog() { }
-        IProductRepository _productRepository;
-        ICategoryRepository _categoryRepository;
+        IProductRepository<IProduct> _productRepository;
+        ICategoryRepository<ICategory> _categoryRepository;
         public Catalog(
-            IProductRepository productRepository,
-            ICategoryRepository categoryRepository)
+            IProductRepository<IProduct> productRepository,
+            ICategoryRepository<ICategory> categoryRepository)
         {
             _productRepository = productRepository;
             _categoryRepository = categoryRepository;
         }
         public IList<ICategory> GetAllCategories()
         {
-            return _categoryRepository.GetAllCategories();
+            return (IList<ICategory>)_categoryRepository.GetAllAsync();
         }
 
-        public IList<IProduct> GetAllProducts()
+        public IList<IProduct> GetAllProductsAsync()
         {
-            return _productRepository.GetAllProducts();
+            return (IList<IProduct>)_productRepository.GetAllAsync();
         }
 
         public ICategory GetCategoryById(Guid categoryId)
         {
-            ICategory category = _categoryRepository.GetCategoryById(categoryId);
+            ICategory category = (ICategory)_categoryRepository.GetAsync(categoryId);
             category.Name = "Category from Oficial Catalog Implementation";
             return category;
         }

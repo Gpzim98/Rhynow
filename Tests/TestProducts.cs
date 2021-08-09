@@ -15,7 +15,7 @@ namespace ProductsCatalog.Tests
         [Fact]
         public void ShouldReturnListOfProducts()
         {
-            IList<IProduct> listOfProducts = productsCatalog.GetAllProducts();
+            IList<IProduct> listOfProducts = productsCatalog.GetAllProductsAsync();
             Assert.True(listOfProducts.Count > 0);
         }
     }

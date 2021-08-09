@@ -6,6 +6,8 @@
 
   <ItemGroup>
     <PackageReference Include="Autofac" Version="6.2.0" />
+    <PackageReference Include="Dapper.Data" Version="2.0.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.2" />
   </ItemGroup>
 
   <ItemGroup>

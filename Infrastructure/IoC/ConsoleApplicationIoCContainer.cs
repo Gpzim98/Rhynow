@@ -1,7 +1,9 @@
 ﻿using Autofac;
 using ProductsCatalog.Application;
 using ProductsCatalog.Application.Interfaces;
-using ProductsCatalog.Infrastructure;
+using ProductsCatalog.Application.Interfaces.Repositories;
+using ProductsCatalog.Domain.Interfaces;
+using ProductsCatalog.Infrastructure.Repositories;
 
 namespace Infrastructure.IoC
 {
@@ -10,8 +12,8 @@ namespace Infrastructure.IoC
         protected override void Load(ContainerBuilder builder)
         {
             builder.RegisterType<ConsoleAppCatalog>().As<ICatalog>().InstancePerLifetimeScope();
-            builder.RegisterType<ProductRepository>().As<IProductRepository>().InstancePerLifetimeScope();
-            builder.RegisterType<CategoryRepository>().As<ICategoryRepository>().InstancePerLifetimeScope();
+            builder.RegisterType<ProductRepository>().As<IProductRepository<IProduct>>().InstancePerLifetimeScope();
+            builder.RegisterType<CategoryRepository>().As<ICategoryRepository<ICategory>>().InstancePerLifetimeScope();
         }
     }
 }
