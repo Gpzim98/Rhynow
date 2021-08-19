@@ -54,6 +54,7 @@ namespace ProductCatalog.Infrastructure.Repositories
 
         public async Task<T> GetAsync(Guid id)
         {
+            Console.WriteLine(">>>");
             using (var connection = CreateConnection())
             {
                 var result = await connection.QuerySingleOrDefaultAsync<T>($"SELECT * FROM {_tableName} WHERE Id=@Id", new { Id = id });
