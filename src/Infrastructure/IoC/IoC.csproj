@@ -10,7 +10,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Data\Data.csproj" />
   </ItemGroup>
-
+  
   <ItemGroup>
     <PackageReference Include="autofac" Version="6.2.0" />
   </ItemGroup>

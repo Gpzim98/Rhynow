@@ -22,12 +22,13 @@ namespace ProductsCatalog.Core.Application
         }
         public IList<CategoryDTO> GetAllCategories()
         {
-            return (IList<CategoryDTO>)_categoryRepository.GetAllAsync();
+            var value = _categoryRepository.GetAllAsync();
+            return (IList<CategoryDTO>)value.Result;
         }
 
         public IList<ProductDTO> GetAllProductsAsync()
         {
-            return (IList<ProductDTO>)_productRepository.GetAllAsync();
+            return (IList<ProductDTO>)_productRepository.GetAllAsync().Result;
         }
 
         public async Task<CategoryDTO> GetCategoryById(Guid categoryId)

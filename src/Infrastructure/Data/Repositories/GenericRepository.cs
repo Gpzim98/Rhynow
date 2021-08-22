@@ -36,7 +36,7 @@ namespace ProductsCatalog.Infrastructure.Data.Repositories
 
         private IEnumerable<PropertyInfo> GetProperties => typeof(T).GetProperties();
 
-        public async Task<IEnumerable<T>> GetAllAsync()
+        public virtual async Task<IEnumerable<T>> GetAllAsync()
         {
             using (var connection = CreateConnection())
             {

@@ -27,7 +27,7 @@ namespace ProductsCatalog.Core.Application
 
         public IList<ProductDTO> GetAllProductsAsync()
         {
-            return (IList<ProductDTO>) _productRepository.GetAllAsync();
+            return (IList<ProductDTO>) _productRepository.GetAllAsync().Result;
         }
 
         public async Task<CategoryDTO> GetCategoryById(Guid categoryId)
