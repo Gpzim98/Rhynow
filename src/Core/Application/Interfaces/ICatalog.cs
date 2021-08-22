@@ -1,14 +1,14 @@
-﻿using ProductsCatalog.Core.Domain.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using ProductsCatalog.Core.Application.DTOs;
 
 namespace ProductsCatalog.Core.Application.Interfaces
 {
     public interface ICatalog
     {
-        IList<Product> GetAllProductsAsync();
-        IList<Category> GetAllCategories();
-        Task<Category> GetCategoryById(Guid categoryId);
+        IList<ProductDTO> GetAllProductsAsync();
+        IList<CategoryDTO> GetAllCategories();
+        Task<CategoryDTO> GetCategoryById(Guid categoryId);
     }
 }

@@ -1,17 +1,16 @@
 ﻿using ProductsCatalog.Core.Application.Interfaces.Repositories;
-using ProductsCatalog.Core.Domain.Models;
 using System.Collections.Generic;
 using System;
+using ProductsCatalog.Core.Application.DTOs;
 
 namespace ProductsCatalog.Infrastructure.Data.Repositories
 {
-    public class CategoryRepository : GenericRepository<Category>, ICategoryRepository<Category>
+    public class CategoryRepository : GenericRepository<CategoryDTO>, ICategoryRepository<CategoryDTO>
     {
         public CategoryRepository(
             string tableName = "Categories") : base(tableName)
         { 
         }
-
         public void CategoryRepoSpecificMethod()
         {
             throw new NotImplementedException();
@@ -27,10 +26,10 @@ namespace ProductsCatalog.Infrastructure.Data.Repositories
             throw new NotImplementedException();
         }
 
-        public IEnumerable<Category> GetAll()
+        public IEnumerable<CategoryDTO> GetAll()
         {
-            IList<Category> categories = new List<Category>();
-            Category category = new Category()
+            IList<CategoryDTO> categories = new List<CategoryDTO>();
+            CategoryDTO category = new CategoryDTO()
             {
                 Name = "Category1",
                 Description = "Test category",
@@ -39,7 +38,7 @@ namespace ProductsCatalog.Infrastructure.Data.Repositories
 
             categories.Add(category);
 
-            Category category1 = new Category()
+            CategoryDTO category1 = new CategoryDTO()
             {
                 Name = "Category2",
                 Description = "Test category",
@@ -51,9 +50,9 @@ namespace ProductsCatalog.Infrastructure.Data.Repositories
             return categories;
         }
 
-        public Category GetById(Guid categoryId)
+        public CategoryDTO GetById(Guid categoryId)
         {
-            return new Category(categoryId);
+            return new CategoryDTO();
         }
 
         public void ProductRepoSpecificMethod()

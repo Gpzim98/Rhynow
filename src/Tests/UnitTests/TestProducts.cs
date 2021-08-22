@@ -2,6 +2,7 @@ using ProductsCatalog.Core.Application.Interfaces;
 using System.Collections.Generic;
 using Xunit;
 using ProductsCatalog.Core.Domain.Models;
+using ProductsCatalog.Core.Application.DTOs;
 
 namespace ProductsCatalog.Tests
 {
@@ -15,7 +16,7 @@ namespace ProductsCatalog.Tests
         [Fact]
         public void ShouldReturnListOfProducts()
         {
-            IList<Product> listOfProducts = productsCatalog.GetAllProductsAsync();
+            IList<ProductDTO> listOfProducts = productsCatalog.GetAllProductsAsync();
             Assert.True(listOfProducts.Count > 0);
         }
     }

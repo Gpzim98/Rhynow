@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace ProductsCatalog.Core.Application.Interfaces.Repositories
 {
-    public interface IProductRepository<Product> : IGenericRepository<Product>
+    public interface IProductRepository<ProductDTO> : IGenericRepository<ProductDTO>
     {
         void ProductRepoSpecificMethod();
     }

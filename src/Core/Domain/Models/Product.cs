@@ -4,15 +4,15 @@ using System.Collections.Generic;
 
 namespace ProductsCatalog.Core.Domain.Models
 {
-    public class Product
+    internal class Product
     {
-        public Product()
+        internal Product()
         {
             this.categories = new HashSet<Category>();
         }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public bool IsActive { get; set; }
-        public ICollection<Category> categories {get; private set;}
+        internal string Name { get; set; }
+        internal string Description { get; set; }
+        internal bool IsActive { get; set; }
+        internal ICollection<Category> categories {get; private set;}
     }
 }

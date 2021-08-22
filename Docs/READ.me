@@ -1,5 +1,5 @@
-PRESENTERS AND VIEWMODELS ARE SPECIFIC FOR EACH UI APPLICATION  
-    I might want a field to show read in one application but not in another
+[ PRESENTERS AND VIEWMODELS ARE SPECIFIC FOR EACH UI APPLICATION ] 
+    I might want a field to show red in one application but not in another
 
 ViewModels is the implementation of th Humble Objects design pattern
 
@@ -25,3 +25,17 @@ Controller invokes Presenters and passed a BalanceOutPutModel
         Strings, booleans, enums with the Appropriated currency symbol, TimeZone, Metrics ( kg, km, temperature etc )
 Controller finally generate a view ( screen/html page etc ) by only reading the ViewModel
         No Logic should be done AT ALL by the View or the controller 
+
+[ Database Gateway implementation ]
+
+** Differently from the UI/API/Console app where the UI consumes the Application layer **
+** In this case the the application layer consumes the Infrastructure the equivalent **
+** to the Presenter will leave on the Application layer **
+
+STEPS:
+Application layer wants to upsert something
+Application layer convert the BusinessEntity/Model?? into a DTO ( Need to name this Converter )
+    It can have ValueObjects if the DB library supports parsing from ValueObjects to primitives
+Application layer calls the Repository.Upsert(DTO)
+    Repository does it jobs and possibly return the new updated ValueObject
+Application layer receives the ValueObject back from Repository and converts it back to BusinessEntity

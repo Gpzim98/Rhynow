@@ -2,11 +2,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31402.337
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Application", "Core\Application\Application.csproj", "{A7FB66AA-2AFA-46EE-A744-BEBF403695A4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Core", "Core\Core.csproj", "{A7FB66AA-2AFA-46EE-A744-BEBF403695A4}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConsoleApplication", "ConsoleApplication\ConsoleApplication.csproj", "{80889F37-9EF9-4568-A26A-F4D333E10E1B}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Domain", "Core\Domain\Domain.csproj", "{E53ADDFB-1CA1-4562-BC1A-6018F34B0818}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Azure", "Infrastructure\Azure\Azure.csproj", "{0B7A2F79-4776-47B3-89A0-26B2CE028343}"
 EndProject
@@ -32,10 +30,6 @@ Global
 		{80889F37-9EF9-4568-A26A-F4D333E10E1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{80889F37-9EF9-4568-A26A-F4D333E10E1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{80889F37-9EF9-4568-A26A-F4D333E10E1B}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E53ADDFB-1CA1-4562-BC1A-6018F34B0818}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E53ADDFB-1CA1-4562-BC1A-6018F34B0818}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E53ADDFB-1CA1-4562-BC1A-6018F34B0818}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E53ADDFB-1CA1-4562-BC1A-6018F34B0818}.Release|Any CPU.Build.0 = Release|Any CPU
 		{0B7A2F79-4776-47B3-89A0-26B2CE028343}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{0B7A2F79-4776-47B3-89A0-26B2CE028343}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B7A2F79-4776-47B3-89A0-26B2CE028343}.Release|Any CPU.ActiveCfg = Release|Any CPU

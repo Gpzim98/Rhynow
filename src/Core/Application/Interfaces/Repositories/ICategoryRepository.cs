@@ -2,7 +2,7 @@
 
 namespace ProductsCatalog.Core.Application.Interfaces.Repositories
 {
-    public interface ICategoryRepository<Category> : IGenericRepository<Category>
+    public interface ICategoryRepository<CategoryDTO> : IGenericRepository<CategoryDTO>
     {
         void CategoryRepoSpecificMethod();
     }

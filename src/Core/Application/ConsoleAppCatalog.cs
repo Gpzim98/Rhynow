@@ -4,35 +4,35 @@ using ProductsCatalog.Core.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using ProductsCatalog.Core.Application.DTOs;
 
 namespace ProductsCatalog.Core.Application
 {
     public class ConsoleAppCatalog : ICatalog
     {
-        public ConsoleAppCatalog() { }
-        IProductRepository<Product> _productRepository;
-        ICategoryRepository<Category> _categoryRepository;
+        IProductRepository<ProductDTO> _productRepository;
+        ICategoryRepository<CategoryDTO> _categoryRepository;
+        
         public ConsoleAppCatalog(
-            IProductRepository<Product> productRepository,
-            ICategoryRepository<Category> categoryRepository)
+            IProductRepository<ProductDTO> productRepository,
+            ICategoryRepository<CategoryDTO> categoryRepository)
         {
             _productRepository = productRepository;
             _categoryRepository = categoryRepository;
         }
-        public IList<Category> GetAllCategories()
+        public IList<CategoryDTO> GetAllCategories()
         {
-            return (IList<Category>)_categoryRepository.GetAllAsync();
+            return (IList<CategoryDTO>)_categoryRepository.GetAllAsync();
         }
 
-        public IList<Product> GetAllProductsAsync()
+        public IList<ProductDTO> GetAllProductsAsync()
         {
-            return (IList<Product>) _productRepository.GetAllAsync();
+            return (IList<ProductDTO>) _productRepository.GetAllAsync();
         }
 
-        public async Task<Category> GetCategoryById(Guid categoryId)
+        public async Task<CategoryDTO> GetCategoryById(Guid categoryId)
         {
             var category = await _categoryRepository.GetAsync(categoryId);
-            category.Name = "Category from ConsoleAppCatalog";
             return category;
         }
     }

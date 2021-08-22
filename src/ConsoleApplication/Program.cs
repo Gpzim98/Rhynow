@@ -1,6 +1,5 @@
 ﻿using System;
 using ProductsCatalog.Core.Application.Interfaces;
-using ProductsCatalog.Core.Domain.Models;
 using Infrastructure.IoC;
 using System.Threading.Tasks;
 

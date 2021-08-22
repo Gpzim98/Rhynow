@@ -4,20 +4,20 @@ using System.Collections.Generic;
 
 namespace ProductsCatalog.Core.Domain.Models
 {
-    public class Category
+    internal class Category
     {
         public Category() 
         {
             products = new HashSet<Product>();
         }
-        public Category(Guid Id)
+        internal Category(Guid Id)
         {
             this.Id = Id;
         }
-        public Guid Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public bool IsActive { get; set; }
-        public ICollection<Product> products {get; private set;}
+        internal Guid Id { get; set; }
+        internal string Name { get; set; }
+        internal string Description { get; set; }
+        internal bool IsActive { get; set; }
+        internal ICollection<Product> products {get; private set;}
     }
 }

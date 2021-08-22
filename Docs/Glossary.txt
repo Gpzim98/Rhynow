@@ -1,6 +1,18 @@
 An Interactor object implements a Use Case of a system.
+    Interactors are implemented on the application layer
+    Interactors are accessible via a port which on a public interface to the application layer 
 
 Entities usually embodies business rules that even make 
     sense even without any software system or application.
     Entity is an object that mostly contains methods and logic, not just data. 
     Entities are not DTOs, DAOs.
+
+DTO == POCO == POJO
+    Aims data transfering between baundaries. 
+    Have no logit in it 
+    Have only fields to represent the data
+        Strings
+        Integers
+        Booleans
+        Enums
+        ValueObjects ( Date, Currency, Temperature, ZipCode etc... )
