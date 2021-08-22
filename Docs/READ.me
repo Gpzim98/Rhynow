@@ -1,0 +1,27 @@
+PRESENTERS AND VIEWMODELS ARE SPECIFIC FOR EACH UI APPLICATION  
+    I might want a field to show read in one application but not in another
+
+ViewModels is the implementation of th Humble Objects design pattern
+
+ViewModels are like DTO with steroids
+    Usually to exchange data between the controller and the view
+    The view will have nothing else to do other than only read the ViewModel and assembly the html
+
+ViewModels have all the properties that a DTO has, plus fields ( usually booleands and strings )
+that represents how the page/screen should look like in terms of APPLICATION BUSINESS RULES, ex:
+
+A field called Balance, would have a string with the balance formated $-19,00
+Plus a boolean IsNegative = true that the View( HTML for example ) would look at 
+to decide if it should be shown as red or not
+
+STEPS: 
+Controller receives a request ( command or query )
+Controller assembles a InputModel ( DTO - Dependency from Application Layer )
+Controller Invokes apropriated Application interactors 
+Controller receives an OutputModel back from application ( DTO - Dependency from Application Layer )
+    This OutputModel would contain primitives and ValueObjects ( Date, Currency, temperature etc)
+Controller invokes Presenters and passed a BalanceOutPutModel
+    Presenter returns a BalanceViewModel with how the data should look like at the screen
+        Strings, booleans, enums with the Appropriated currency symbol, TimeZone, Metrics ( kg, km, temperature etc )
+Controller finally generate a view ( screen/html page etc ) by only reading the ViewModel
+        No Logic should be done AT ALL by the View or the controller 

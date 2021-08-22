@@ -1,0 +1,20 @@
+The reason to have the DTO's folder in the Application layer
+is to avoid infrastructure to depend on ?Domain.Models?
+
+DTO's will be public and used by Infrastructure to populate data from and into DB
+and passed to Application layer
+
+DTO's wil
+
+DTOs are imutable! It is only for transfering data from one place to another
+The consumer of a DTO might be built in .NET/C#/Java or even JavaScript/TypeScript. 
+A DTO is often serialized so that it can be independent of the technology used in the receiver. 
+
+See lazy initialization in C# for avoiding serializing many levels os property objects like:
+    Employee
+        Role
+            Group
+                Permission
+                    Policy etc
+
+                    

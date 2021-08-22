@@ -1,0 +1,6 @@
+An Interactor object implements a Use Case of a system.
+
+Entities usually embodies business rules that even make 
+    sense even without any software system or application.
+    Entity is an object that mostly contains methods and logic, not just data. 
+    Entities are not DTOs, DAOs.

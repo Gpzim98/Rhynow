@@ -1,0 +1,22 @@
+using ProductsCatalog.Core.Application.Interfaces;
+using System.Collections.Generic;
+using Xunit;
+using ProductsCatalog.Core.Domain.Models;
+
+namespace ProductsCatalog.Tests
+{
+    public class TestProducts : BaseTest
+    {
+        private ICatalog productsCatalog;
+        public TestProducts()
+        {
+            productsCatalog = Resolve<ICatalog>();
+        }
+        [Fact]
+        public void ShouldReturnListOfProducts()
+        {
+            IList<Product> listOfProducts = productsCatalog.GetAllProductsAsync();
+            Assert.True(listOfProducts.Count > 0);
+        }
+    }
+}

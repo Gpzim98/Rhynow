@@ -6,7 +6,7 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/ConsoleApplication/bin/Debug/net5.0/ConsoleApplication.dll",
+            "program": "${workspaceFolder}/src/ConsoleApplication/bin/Debug/net5.0/ConsoleApplication.dll",
             "args": ["test"],
             "cwd": "${workspaceFolder}",
             "console": "internalConsole",
