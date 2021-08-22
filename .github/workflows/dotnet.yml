@@ -17,41 +17,18 @@ jobs:
       uses: actions/setup-dotnet@v1
       with:
         dotnet-version: 5.0.x
-    - name: Restoring dependencies Application layer
-      run: dotnet restore Application/Application.csproj
-    - name: Restoring dependencies Domain Layer
-      run: dotnet restore Domain/Domain.csproj
-    - name: Restoring dependencies Infrastructure Layer  
-      run: dotnet restore Infrastructure/Infrastructure.csproj
-    - name: Restoring dependencies Tests project  
-      run: dotnet restore Tests/Tests.csproj
-    - name: Restoring dependencies Console project  
-      run: dotnet restore ConsoleApplication/ConsoleApplication.csproj
+    - name: Restoring dependencies for the solution
+      run: dotnet restore src/Rhynow.sln
     
-    - name: Building Application layer
-      run: dotnet build Application/Application.csproj --no-restore
-    - name: Building Domain layer
-      run: dotnet build Domain/Domain.csproj --no-restore
-    - name: Building Infrastructure layer
-      run: dotnet build Infrastructure/Infrastructure.csproj --no-restore
-    - name: Building Tests project
-      run: dotnet build Tests/Tests.csproj --no-restore
-    - name: Building Console project
-      run: dotnet build ConsoleApplication/ConsoleApplication.csproj --no-restore
+    - name: Building Solution
+      run: dotnet build src/Rhynow.sln --no-restore
     
     - name: Run Unit Tests
-      run: dotnet test Tests/Tests.csproj --no-build --verbosity normal
+      run: dotnet test src/Rhynow.sln  --no-build --verbosity normal
     
     - name: Install dotnet format
       run: dotnet tool update --global dotnet-format
 
-    - name: Run dotnet format Application Layer
-      run: dotnet format --check --verbosity diagnostic Application/Application.csproj
-    - name: Run dotnet format Domain Layer
-      run: dotnet format --check --verbosity diagnostic Domain/Domain.csproj
-    - name: Run dotnet format Infrastructure Layer
-      run: dotnet format --check --verbosity diagnostic Infrastructure/Infrastructure.csproj
-    - name: Run dotnet format Tests project
-      run: dotnet format --check --verbosity diagnostic Tests/Tests.csproj
-    - name: Run dotnet format ConsoleApplication application
-      run: dotnet format --check --verbosity diagnostic ConsoleApplication/ConsoleApplication.csproj    
+    # - name: Run dotnet format Application Layer
+    #   run: dotnet format --check --verbosity diagnostic Application/Application.csproj
+ 
