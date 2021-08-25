@@ -1,17 +1,30 @@
+using System.Threading.Tasks;
 using ProductsCatalog.Core.Application.Interfaces.Repositories;
 using Dapper;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Linq;
 using System.Reflection;
 using System.Text;
-using System.Threading.Tasks;
+using System.Data.SQLite;
 
 namespace ProductsCatalog.Infrastructure.Data.Repositories
 {
+    public class MySqlGuidTypeHandler : SqlMapper.TypeHandler<Guid>
+    {
+        public override void SetValue(IDbDataParameter parameter, Guid guid)
+        {
+            parameter.Value = guid.ToString();
+        }
+
+        public override Guid Parse(object value)
+        {
+            return new Guid((string)value);
+        }
+    }
+
     public abstract class GenericRepository<T> : IGenericRepository<T> where T : class
     {
         private readonly string _tableName;
@@ -19,19 +32,34 @@ namespace ProductsCatalog.Infrastructure.Data.Repositories
         protected GenericRepository(string tableName)
         {
             _tableName = tableName;
+
+            SqlMapper.AddTypeHandler(new MySqlGuidTypeHandler());
+            SqlMapper.RemoveTypeMap(typeof(Guid));
+            SqlMapper.RemoveTypeMap(typeof(Guid?));
         }
 
-        private SqlConnection SqlConnection()
+        private IDbConnection SqlConnection()
         {
             //return new SqlConnection(ConfigurationManager.ConnectionStrings["MainDb"].ConnectionString);
-            return new SqlConnection("Connection String");
+            
+            string dbFilePath = "/Users/gp/Rhynow/src/Infrastructure/Data/ProductsCatalog.db"; 
+            var _dbConnection = new SQLiteConnection(string.Format("Data Source={0};Version=3;", dbFilePath), true);
+
+            return _dbConnection;
         }
 
         private IDbConnection CreateConnection()
         {
-            var conn = SqlConnection();
-            conn.Open();
-            return conn;
+            try
+            {
+                var conn = SqlConnection();
+                conn.Open();
+                return conn;
+            }
+            catch (System.Exception e)
+            {
+                throw new Exception("Could not open connection with the database", e);
+            }
         }
 
         private IEnumerable<PropertyInfo> GetProperties => typeof(T).GetProperties();
@@ -52,12 +80,12 @@ namespace ProductsCatalog.Infrastructure.Data.Repositories
             }
         }
 
-        public async Task<T> GetAsync(Guid id)
+        public virtual async Task<T> GetAsync(Guid id)
         {
-            Console.WriteLine(">>>");
             using (var connection = CreateConnection())
             {
-                var result = await connection.QuerySingleOrDefaultAsync<T>($"SELECT * FROM {_tableName} WHERE Id=@Id", new { Id = id });
+                string sql = $"SELECT * FROM {_tableName} WHERE Id=@Id";
+                var result = await connection.QuerySingleOrDefaultAsync<T>(sql, new { Id = id.ToString() });
                 if (result == null)
                     throw new KeyNotFoundException($"{_tableName} with id [{id}] could not be found.");
 

@@ -37,5 +37,5 @@ Application layer wants to upsert something
 Application layer convert the BusinessEntity/Model?? into a DTO ( Need to name this Converter )
     It can have ValueObjects if the DB library supports parsing from ValueObjects to primitives
 Application layer calls the Repository.Upsert(DTO)
-    Repository does it jobs and possibly return the new updated ValueObject
-Application layer receives the ValueObject back from Repository and converts it back to BusinessEntity
+    Repository does it jobs and possibly return the new updated DTO
+Application layer receives the DTO back from Repository and converts it back to BusinessEntity

@@ -1,3 +1,4 @@
+using System;
 using ProductsCatalog.Core.Domain.Models;
 
 namespace ProductsCatalog.Core.Application.DTOs
@@ -11,6 +12,7 @@ namespace ProductsCatalog.Core.Application.DTOs
             this.Description = category.Description;
             this.IsActive = category.IsActive;
         }
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public bool IsActive { get; set; }

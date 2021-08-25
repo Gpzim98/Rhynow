@@ -12,27 +12,8 @@ namespace ProductsCatalog.Infrastructure.Data.Repositories.Mocking
             string tableName = "Products") : base(tableName)
         { 
         }
+        
         public void ProductRepoSpecificMethod()
-        {
-            throw new NotImplementedException();
-        }
-
-        public T Create()
-        {
-            throw new NotImplementedException();
-        }
-
-        public T Delete()
-        {
-            throw new NotImplementedException();
-        }
-
-        public ProductDTO GetById(Guid ProductId)
-        {
-            return new ProductDTO();
-        }
-
-        public T Update()
         {
             throw new NotImplementedException();
         }

@@ -15,54 +15,5 @@ namespace ProductsCatalog.Infrastructure.Data.Repositories
         {
             throw new NotImplementedException();
         }
-
-        public T Create<T>()
-        {
-            throw new NotImplementedException();
-        }
-
-        public T Delete<T>()
-        {
-            throw new NotImplementedException();
-        }
-
-        public IEnumerable<CategoryDTO> GetAll()
-        {
-            IList<CategoryDTO> categories = new List<CategoryDTO>();
-            CategoryDTO category = new CategoryDTO()
-            {
-                Name = "Category1",
-                Description = "Test category",
-                IsActive = true
-            };
-
-            categories.Add(category);
-
-            CategoryDTO category1 = new CategoryDTO()
-            {
-                Name = "Category2",
-                Description = "Test category",
-                IsActive = true
-            };
-
-            categories.Add(category1);
-
-            return categories;
-        }
-
-        public CategoryDTO GetById(Guid categoryId)
-        {
-            return new CategoryDTO();
-        }
-
-        public void ProductRepoSpecificMethod()
-        {
-            throw new NotImplementedException();
-        }
-
-        public T Update<T>()
-        {
-            throw new NotImplementedException();
-        }
     }
 }

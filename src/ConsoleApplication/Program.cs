@@ -20,8 +20,9 @@ namespace ConsoleApplication
         {
             IoCContainer ioCContainer = new IoCContainer();
             ICatalog catalog = ioCContainer.productsCatalog;
-            var category = catalog.GetCategoryById(Guid.NewGuid());
-            Console.WriteLine(category);
+            var categoryId = new Guid("27f9f112-1b4c-44b9-8ed9-2abdc351d005");
+            var category = catalog.GetCategoryById(categoryId);
+            Console.WriteLine(category.Result.ToString());
         }
     }
 }

@@ -12,36 +12,12 @@ namespace ProductsCatalog.Infrastructure.Data.Repositories.Mocking
             string tableName = "Categories") : base(tableName)
         { 
         }
+
         public void CategoryRepoSpecificMethod()
         {
             throw new NotImplementedException();
         }
-
-        public T Create()
-        {
-            throw new NotImplementedException();
-        }
-
-        public T Delete()
-        {
-            throw new NotImplementedException();
-        }
-
-        public CategoryDTO GetById(Guid categoryId)
-        {
-            return new CategoryDTO();
-        }
-
-        public void ProductRepoSpecificMethod()
-        {
-            throw new NotImplementedException();
-        }
-
-        public T Update()
-        {
-            throw new NotImplementedException();
-        }
-
+        
         public override async Task<IEnumerable<T>> GetAllAsync()
         {
             CategoryDTO[] categories = new CategoryDTO[]
@@ -50,6 +26,12 @@ namespace ProductsCatalog.Infrastructure.Data.Repositories.Mocking
             };
             
             return (IEnumerable<T>)await Task.FromResult(categories);
+        }
+
+        public override async Task<T> GetAsync(Guid id)
+        {
+            var category = new CategoryDTO() { Name = "Category Sample " };
+            return (T) await Task.FromResult(category);
         }
     }
 }

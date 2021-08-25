@@ -1,6 +1,5 @@
 ﻿using ProductsCatalog.Core.Application.Interfaces.Repositories;
 using ProductsCatalog.Core.Application.Interfaces;
-using ProductsCatalog.Core.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;

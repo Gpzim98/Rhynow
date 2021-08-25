@@ -1,6 +1,5 @@
 ﻿using ProductsCatalog.Core.Application.Interfaces;
 using ProductsCatalog.Core.Application.Interfaces.Repositories;
-using ProductsCatalog.Core.Domain.Models;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
@@ -8,6 +7,8 @@ using ProductsCatalog.Core.Application.DTOs;
 
 namespace ProductsCatalog.Core.Application
 {
+
+
     public class ConsoleAppCatalog : ICatalog
     {
         IProductRepository<ProductDTO> _productRepository;
@@ -20,6 +21,7 @@ namespace ProductsCatalog.Core.Application
             _productRepository = productRepository;
             _categoryRepository = categoryRepository;
         }
+
         public IList<CategoryDTO> GetAllCategories()
         {
             return (IList<CategoryDTO>)_categoryRepository.GetAllAsync();
