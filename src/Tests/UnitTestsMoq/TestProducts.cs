@@ -11,7 +11,7 @@ using  ProductsCatalog.Core.Application;
 
 namespace ProductsCatalog.UnitTestsMoq
 {
-    public class TestProducts : IoCSupportedTest<MoqUnitTestsIOCContainer>
+    public class TestProducts
     {
         private ICatalog productsCatalog;
         private readonly Mock<IProductRepository<ProductDTO>> productsMock = new Mock<IProductRepository<ProductDTO>>();
