@@ -1,7 +1,6 @@
 using ProductsCatalog.Core.Application.Interfaces;
 using System.Collections.Generic;
 using Xunit;
-using ProductsCatalog.Core.Domain.Models;
 using ProductsCatalog.Core.Application.DTOs;
 
 namespace ProductsCatalog.Tests

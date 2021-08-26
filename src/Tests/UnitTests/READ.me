@@ -1,0 +1,14 @@
+What is UnitTest?
+
+Here we test units of our code
+    Classes, methods, functions etc
+    If that Class/method/function have dependencies being injected, we moq them ( Repositories, File sytem, services etc )
+        WE MOCK BECAUSE WE DON'T CARE ABOUT THAT DEPENDENCY
+        WE DONT CARE IF THE DEPENDENCY IS WORKING, WE ASSUME IT IS AND MOCK THE RESULTS IT SHOULD BE GIVING US
+    We want to test if our units does ITS JOB correctly once the dependency gives us what we expect from it.
+
+    This is the UnitTests project where we mock repositories manually, we wrote some mocks and we 
+    injet them via dependency injection 
+
+    On the other project UnitTestsMoq we use Moq framework to mock the repositories, so that we 
+    don't need to write moqs, fakes or stubs ourselves.
