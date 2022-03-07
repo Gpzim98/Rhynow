@@ -16,3 +16,4 @@ namespace ProductsCatalog.Core.Domain.Models
         internal ICollection<Category> categories {get; private set;}
     }
 }
+
