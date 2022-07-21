@@ -27,7 +27,7 @@ namespace Checkout
 
             string responseMessage = string.IsNullOrEmpty(name)
                 ? "Hi Customers"
-                : $"Hello, {name}. Customers from Rhynow";
+                : $"Hello, {name}. Customers from Rhynow ON LINUX";
 
             return new OkObjectResult(responseMessage);
         }

@@ -6,9 +6,9 @@ RHYNOWTENANT="39e2b6a6-1153-4e5a-9489-733e891b9fcf"
 DEVSUBSCRIPTION="8a09746f-31d7-4331-bac2-2cf0971d06a3"
 LOCATION="westeurope"
 
-BACKENDRESOURCEGROUP="backend6"
-STORAGEACCOUNTNAME="devcheckoutrhynow6"
-APPNAME="devcheckoutrhynow6"
+BACKENDRESOURCEGROUP="backend"
+STORAGEACCOUNTNAME="devcheckoutrhynow"
+APPNAME="devcheckoutrhynow"
 
 do_login()
 {

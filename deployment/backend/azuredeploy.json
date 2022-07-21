@@ -36,7 +36,7 @@
     },
     "variables": {
       "functionAppName": "[parameters('appName')]",
-      "hostingPlanName": "test",
+      "hostingPlanName": "[parameters('appName')]",
       "storageAccountName": "[parameters('storageAccountName')]",
       "storageAccountid": "[concat(resourceGroup().id,'/providers/','Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]"
     },
