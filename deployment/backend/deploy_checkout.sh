@@ -5,11 +5,10 @@ set -e
 BACKENDRESOURCEGROUP="backend"
 APPNAME="devcheckoutrhynow"
 
-REQUESTS_CA_BUNDLE=./opt/azure-cli/lib/python3.10/site-packages/certifi/cacert.pem
 do_deploy_function_app()
 {
     echo "Deploying Function App"
-    cd ../src/Checkout/
+    cd ../../src/WebUI/Checkout/
     git archive -o /tmp/checkout.zip HEAD
     az functionapp deployment source config-zip \
     -g backend \
