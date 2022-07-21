@@ -2,8 +2,8 @@
 # exit when any command fails
 set -e
 
-BACKENDRESOURCEGROUP="backend"
-APPNAME="devcheckoutrhynow"
+BACKENDRESOURCEGROUP="backend6"
+APPNAME="devcheckoutrhynow6"
 
 do_deploy_function_app()
 {
@@ -11,8 +11,8 @@ do_deploy_function_app()
     cd ../../src/WebUI/Checkout/
     git archive -o /tmp/checkout.zip HEAD
     az functionapp deployment source config-zip \
-    -g backend \
-    -n devcheckoutrhynow \
+    -g $BACKENDRESOURCEGROUP \
+    -n $APPNAME \
     --src "/tmp/checkout.zip"
     rm "/tmp/checkout.zip"
     echo "End Deploying Function App"

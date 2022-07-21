@@ -36,7 +36,7 @@
     },
     "variables": {
       "functionAppName": "[parameters('appName')]",
-      "hostingPlanName": "[parameters('appName')]",
+      "hostingPlanName": "test",
       "storageAccountName": "[parameters('storageAccountName')]",
       "storageAccountid": "[concat(resourceGroup().id,'/providers/','Microsoft.Storage/storageAccounts/', variables('storageAccountName'))]"
     },
@@ -53,13 +53,21 @@
       },
       {
         "type": "Microsoft.Web/serverfarms",
-        "apiVersion": "2015-04-01",
+        "apiVersion": "2018-11-01",
         "name": "[variables('hostingPlanName')]",
+        "kind": "linux",
         "location": "[parameters('location')]",
+        
         "properties": {
           "name": "[variables('hostingPlanName')]",
-          "computeMode": "Dynamic",
-          "sku": "Dynamic"
+          "workerSize": "0",
+          "workerSizeId": "0",
+          "numberOfWorkers": "1",
+          "reserved": true
+        },
+        "sku": {
+            "Tier": "Dynamic",
+            "Name": "Y1"
         }
       },
       {
@@ -67,7 +75,7 @@
         "type": "Microsoft.Web/sites",
         "name": "[variables('functionAppName')]",
         "location": "[parameters('location')]",
-        "kind": "functionapp",
+        "kind": "functionapp,linux",
         "dependsOn": [
           "[resourceId('Microsoft.Web/serverfarms', variables('hostingPlanName'))]",
           "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
@@ -103,6 +111,14 @@
               {
                 "name": "SCM_DO_BUILD_DURING_DEPLOYMENT",
                 "value": true
+              },
+              {
+                "name": "ENABLE_ORYX_BUILD",
+                "value": true
+              },
+              {
+                "name": "FUNCTIONS_WORKER_RUNTIME",
+                "value": "dotnet"
               }
             ]
           }

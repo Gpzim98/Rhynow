@@ -1,0 +1,9 @@
+# Create another script to deploy ( Can be ran via local machine, or GitHub actions )
+# Resource group
+# A managed identity 
+# add a RBAC givin access to the DEVSUBSCRIPTION
+# Create a Azure Pipeline
+# Add deployment slots and deploy to a slot and swap to avoid down time ( blue green deploy )
+# Assign the managed identity to the azure Pipeline
+    # this pipeline will deploy this script here creating the whole stack ( back + front )
+# Create subscription via ARM template https://techcommunity.microsoft.com/t5/azure-governance-and-management/creating-subscriptions-with-arm-templates/ba-p/1839961#:~:text=Subscription%20resource%20provider%20enables%20subscription,proper%20workload%20and%20billing%20account.
