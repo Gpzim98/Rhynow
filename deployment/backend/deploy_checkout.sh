@@ -4,5 +4,5 @@ set -e
 
 APPNAME="devcheckout"
 
-cd ../../src/WebUI/Checkout/
+cd ../../src/Consumers/Checkout/
 func azure functionapp publish $APPNAME --dotnet

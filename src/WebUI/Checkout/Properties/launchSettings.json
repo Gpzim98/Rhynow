@@ -1,9 +1,0 @@
-{
-  "profiles": {
-    "Checkout": {
-      "commandName": "Project",
-      "commandLineArgs": "--port 7141",
-      "launchBrowser": false
-    }
-  }
-}
