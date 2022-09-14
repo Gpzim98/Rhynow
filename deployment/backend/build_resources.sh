@@ -2,13 +2,13 @@
 # exit when any command fails
 set -e
 
-RHYNOWTENANT="39e2b6a6-1153-4e5a-9489-733e891b9fcf"
-DEVSUBSCRIPTION="8a09746f-31d7-4331-bac2-2cf0971d06a3"
+RHYNOWTENANT="8c9c375d-cfba-4e19-8574-74b31e067f35"
+DEVSUBSCRIPTION="b903fd50-852e-48e8-a549-a50fce419269"
 LOCATION="westeurope"
 
 BACKENDRESOURCEGROUP="backend"
-STORAGEACCOUNTNAME="devcheckoutrhynow"
-APPNAME="devcheckoutrhynow"
+STORAGEACCOUNTNAME="devcheckout"
+APPNAME="devcheckout"
 
 do_login()
 {

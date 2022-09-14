@@ -2,7 +2,7 @@
 # exit when any command fails
 set -e
 
-APPNAME="devcheckoutrhynow"
+APPNAME="devcheckout"
 
 cd ../../src/WebUI/Checkout/
-func azure functionapp publish $APPNAME
+func azure functionapp publish $APPNAME --dotnet

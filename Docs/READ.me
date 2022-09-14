@@ -39,3 +39,13 @@ Application layer convert the BusinessEntity/Model?? into a DTO ( Need to name t
 Application layer calls the Repository.Upsert(DTO)
     Repository does it jobs and possibly return the new updated DTO
 Application layer receives the DTO back from Repository and converts it back to BusinessEntity
+
+---- 
+Running locally
+
+- Open o Visual Studio
+- Restore dependencies
+- Set Checkout Azure function as start up
+- Install Azure functions core tools https://github.com/Azure/azure-functions-core-tools
+- Deploy build_resources.sh
+- Deploy deploy_checkout.sh
